@@ -1,0 +1,16 @@
+D:\Рабочий стол\Для уроков по проге\autocomplete.csproj\bin\Debug\dic\adjectives.txt
+D:\Рабочий стол\Для уроков по проге\autocomplete.csproj\bin\Debug\dic\nouns.txt
+D:\Рабочий стол\Для уроков по проге\autocomplete.csproj\bin\Debug\dic\verbs.txt
+D:\Рабочий стол\Для уроков по проге\autocomplete.csproj\bin\Debug\Autocomplete.exe.config
+D:\Рабочий стол\Для уроков по проге\autocomplete.csproj\bin\Debug\Autocomplete.exe
+D:\Рабочий стол\Для уроков по проге\autocomplete.csproj\bin\Debug\Autocomplete.pdb
+D:\Рабочий стол\Для уроков по проге\autocomplete.csproj\bin\Debug\nunit.framework.dll
+D:\Рабочий стол\Для уроков по проге\autocomplete.csproj\obj\Debug\autocomplete.csproj.AssemblyReference.cache
+D:\Рабочий стол\Для уроков по проге\autocomplete.csproj\obj\Debug\autocomplete.csproj.SuggestedBindingRedirects.cache
+D:\Рабочий стол\Для уроков по проге\autocomplete.csproj\obj\Debug\Autocomplete.AutocompleteForm.resources
+D:\Рабочий стол\Для уроков по проге\autocomplete.csproj\obj\Debug\Autocomplete.Properties.Resources.resources
+D:\Рабочий стол\Для уроков по проге\autocomplete.csproj\obj\Debug\autocomplete.csproj.GenerateResource.cache
+D:\Рабочий стол\Для уроков по проге\autocomplete.csproj\obj\Debug\autocomplete.csproj.CoreCompileInputs.cache
+D:\Рабочий стол\Для уроков по проге\autocomplete.csproj\obj\Debug\autocomplete.csproj.CopyComplete
+D:\Рабочий стол\Для уроков по проге\autocomplete.csproj\obj\Debug\Autocomplete.exe
+D:\Рабочий стол\Для уроков по проге\autocomplete.csproj\obj\Debug\Autocomplete.pdb

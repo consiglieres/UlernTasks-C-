@@ -1,0 +1,21 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=08de0dc2_002Dbc04_002D4415_002Dbc49_002D34ea27971d24/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TriangleTask_Tests #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::8B051FDE-3D78-4BB7-A11C-98F67407AF08::.NETFramework,Version=v4.7.2::Manipulation.TriangleTask_Tests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=13219fc8_002Dded8_002D47d9_002D89ec_002D5e2ffea85869/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TriangleTask_Tests #4" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::8B051FDE-3D78-4BB7-A11C-98F67407AF08::.NETFramework,Version=v4.7.2::Manipulation.TriangleTask_Tests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=5a574177_002D539c_002D468d_002Da801_002D5b07b84257f1/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TriangleTask_Tests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::8B051FDE-3D78-4BB7-A11C-98F67407AF08::.NETFramework,Version=v4.7.2::Manipulation.TriangleTask_Tests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=78b7467e_002Decd4_002D4826_002D878e_002Df2ca204fc619/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TriangleTask_Tests #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::8B051FDE-3D78-4BB7-A11C-98F67407AF08::.NETFramework,Version=v4.7.2::Manipulation.TriangleTask_Tests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
