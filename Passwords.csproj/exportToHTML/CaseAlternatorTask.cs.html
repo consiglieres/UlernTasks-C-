@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>CaseAlternatorTask.cs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #6c95eb;}
+.s1 { color: #d0d0d0;}
+.s2 { color: #bdbdbd;}
+.s3 { color: #85c46c; font-style: italic;}
+.s4 { color: #ed94c0;}
+</style>
+</head>
+<body bgcolor="#262626">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+CaseAlternatorTask.cs</font>
+</center></td></tr></table>
+<pre><span class="s0">using </span><span class="s1">System</span><span class="s2">;</span>
+<span class="s0">using </span><span class="s1">System</span><span class="s2">.</span><span class="s1">Collections</span><span class="s2">.</span><span class="s1">Generic</span><span class="s2">;</span>
+<span class="s0">using </span><span class="s1">System</span><span class="s2">.</span><span class="s1">Linq</span><span class="s2">;</span>
+
+<span class="s0">namespace </span><span class="s1">Passwords</span>
+<span class="s2">{</span>
+    <span class="s0">public class </span><span class="s1">CaseAlternatorTask</span>
+    <span class="s2">{</span>
+        <span class="s3">//Тесты будут вызывать этот метод</span>
+        <span class="s0">public static </span><span class="s1">List</span><span class="s2">&lt;</span><span class="s0">string</span><span class="s2">&gt; </span><span class="s1">AlternateCharCases</span><span class="s2">(</span><span class="s0">string </span><span class="s1">lowercaseWord</span><span class="s2">)</span>
+        <span class="s2">{</span>
+            <span class="s1">var result </span><span class="s2">= </span><span class="s0">new </span><span class="s1">List</span><span class="s2">&lt;</span><span class="s0">string</span><span class="s2">&gt;();</span>
+            <span class="s1">AlternateCharCases</span><span class="s2">(</span><span class="s1">lowercaseWord</span><span class="s2">.</span><span class="s1">ToCharArray</span><span class="s2">(), </span><span class="s4">0</span><span class="s2">, </span><span class="s1">result</span><span class="s2">);</span>
+            <span class="s0">return </span><span class="s1">result</span><span class="s2">;</span>
+        <span class="s2">}</span>
+
+        <span class="s0">static void </span><span class="s1">AlternateCharCases</span><span class="s2">(</span><span class="s0">char</span><span class="s2">[] </span><span class="s1">word</span><span class="s2">, </span><span class="s0">int </span><span class="s1">startIndex</span><span class="s2">, </span><span class="s1">List</span><span class="s2">&lt;</span><span class="s0">string</span><span class="s2">&gt; </span><span class="s1">result</span><span class="s2">)</span>
+        <span class="s2">{</span>
+            <span class="s3">// TODO</span>
+            <span class="s1">result</span><span class="s2">.</span><span class="s1">Add</span><span class="s2">(</span><span class="s0">new string </span><span class="s2">(</span><span class="s1">word</span><span class="s2">));</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>

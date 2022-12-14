@@ -1,0 +1,104 @@
+<html>
+<head>
+<title>Program.cs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #6c95eb;}
+.s1 { color: #d0d0d0;}
+.s2 { color: #bdbdbd;}
+.s3 { color: #ed94c0;}
+.s4 { color: #c9a26d;}
+.s5 { color: #85c46c; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#262626">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Program.cs</font>
+</center></td></tr></table>
+<pre><span class="s0">using </span><span class="s1">System</span><span class="s2">;</span>
+<span class="s0">using </span><span class="s1">System</span><span class="s2">.</span><span class="s1">Collections</span><span class="s2">.</span><span class="s1">Generic</span><span class="s2">;</span>
+<span class="s0">using </span><span class="s1">System</span><span class="s2">.</span><span class="s1">Linq</span><span class="s2">;</span>
+
+<span class="s0">namespace </span><span class="s1">Passwords</span>
+<span class="s2">{</span>
+    <span class="s0">public class </span><span class="s1">CaseAlternatorChecker</span>
+    <span class="s2">{</span>
+        <span class="s0">static readonly </span><span class="s1">Random random </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Random</span><span class="s2">(</span><span class="s3">123132</span><span class="s2">);</span>
+
+        <span class="s0">public static void </span><span class="s1">Main</span><span class="s2">()</span>
+        <span class="s2">{</span>
+            <span class="s0">try</span>
+            <span class="s2">{</span>
+                <span class="s1">Check</span><span class="s2">(</span><span class="s4">&quot;cat&quot;</span><span class="s2">, </span><span class="s3">8</span><span class="s2">);</span>
+                <span class="s1">Check</span><span class="s2">(</span><span class="s4">&quot;&quot;</span><span class="s2">, </span><span class="s3">1</span><span class="s2">);</span>
+                <span class="s1">Check</span><span class="s2">(</span><span class="s4">&quot;a&quot;</span><span class="s2">, </span><span class="s3">2</span><span class="s2">);</span>
+                <span class="s1">Check</span><span class="s2">(</span><span class="s4">&quot;ab&quot;</span><span class="s2">, </span><span class="s3">4</span><span class="s2">);</span>
+                <span class="s1">Check</span><span class="s2">(</span><span class="s4">&quot;ab!&quot;</span><span class="s2">, </span><span class="s3">4</span><span class="s2">);</span>
+                <span class="s1">Check</span><span class="s2">(</span><span class="s4">&quot;!ab&quot;</span><span class="s2">, </span><span class="s3">4</span><span class="s2">);</span>
+                <span class="s1">Check</span><span class="s2">(</span><span class="s4">&quot;!a!b!&quot;</span><span class="s2">, </span><span class="s3">4</span><span class="s2">);</span>
+                <span class="s1">Check</span><span class="s2">(</span><span class="s4">&quot;a!b&quot;</span><span class="s2">, </span><span class="s3">4</span><span class="s2">);</span>
+                <span class="s1">Check</span><span class="s2">(</span><span class="s4">&quot;3141592&quot;</span><span class="s2">, </span><span class="s3">1</span><span class="s2">);</span>
+                <span class="s1">Check</span><span class="s2">(</span><span class="s4">&quot;42ndfloor&quot;</span><span class="s2">);</span>
+                <span class="s1">Check</span><span class="s2">(</span><span class="s4">&quot;при4вет&quot;</span><span class="s2">, </span><span class="s3">1 </span><span class="s2">&lt;&lt; </span><span class="s3">6</span><span class="s2">);</span>
+                <span class="s1">Check</span><span class="s2">(</span><span class="s1">GenerateWord</span><span class="s2">(</span><span class="s3">3</span><span class="s2">));</span>
+                <span class="s1">Check</span><span class="s2">(</span><span class="s1">GenerateWord</span><span class="s2">(</span><span class="s3">4</span><span class="s2">));</span>
+                <span class="s1">Check</span><span class="s2">(</span><span class="s1">GenerateWord</span><span class="s2">(</span><span class="s3">5</span><span class="s2">));</span>
+                <span class="s1">Check</span><span class="s2">(</span><span class="s1">GenerateWord</span><span class="s2">(</span><span class="s3">10</span><span class="s2">));</span>
+                <span class="s1">Check</span><span class="s2">(</span><span class="s1">GenerateWord</span><span class="s2">(</span><span class="s3">15</span><span class="s2">));</span>
+                <span class="s1">Check</span><span class="s2">(</span><span class="s4">&quot;straße&quot;</span><span class="s2">, </span><span class="s3">32</span><span class="s2">); </span><span class="s5">// see https://unicode.org/faq/casemap_charprop.html#11</span>
+                <span class="s1">Check</span><span class="s2">(</span><span class="s1">GenerateStrangeWord</span><span class="s2">(</span><span class="s3">5</span><span class="s2">));</span>
+                <span class="s1">Check</span><span class="s2">(</span><span class="s1">GenerateStrangeWord</span><span class="s2">(</span><span class="s3">5</span><span class="s2">));</span>
+                <span class="s1">Check</span><span class="s2">(</span><span class="s1">GenerateStrangeWord</span><span class="s2">(</span><span class="s3">5</span><span class="s2">));</span>
+                <span class="s1">Check</span><span class="s2">(</span><span class="s1">GenerateStrangeWord</span><span class="s2">(</span><span class="s3">5</span><span class="s2">));</span>
+                <span class="s1">Check</span><span class="s2">(</span><span class="s4">&quot;ⅲ ⅳ ⅷ&quot;</span><span class="s2">, </span><span class="s3">1</span><span class="s2">); </span><span class="s5">// see https://en.wikipedia.org/wiki/Numerals_in_Unicode#Roman_numerals</span>
+            <span class="s2">}</span>
+            <span class="s0">catch </span><span class="s2">(</span><span class="s1">Exception e</span><span class="s2">)</span>
+            <span class="s2">{</span>
+                <span class="s1">Console</span><span class="s2">.</span><span class="s1">WriteLine</span><span class="s2">(</span><span class="s1">e</span><span class="s2">.</span><span class="s1">Message</span><span class="s2">);</span>
+                <span class="s0">return</span><span class="s2">;</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+
+        <span class="s0">private static string </span><span class="s1">GenerateWord</span><span class="s2">(</span><span class="s0">int </span><span class="s1">len</span><span class="s2">)</span>
+        <span class="s2">{</span>
+            <span class="s1">var abc </span><span class="s2">= </span><span class="s4">&quot;qwertyuiopasdfghjklzxcvbnm0987654321-!!@#$%^&amp;*() &quot;</span><span class="s2">;</span>
+            <span class="s1">var letters </span><span class="s2">= </span><span class="s1">Enumerable</span><span class="s2">.</span><span class="s1">Repeat</span><span class="s2">(</span><span class="s3">0</span><span class="s2">, </span><span class="s1">len</span><span class="s2">).</span><span class="s1">Select</span><span class="s2">(</span><span class="s1">i =&gt; abc</span><span class="s2">[</span><span class="s1">random</span><span class="s2">.</span><span class="s1">Next</span><span class="s2">(</span><span class="s1">abc</span><span class="s2">.</span><span class="s1">Length</span><span class="s2">)]);</span>
+            <span class="s0">return new string</span><span class="s2">(</span><span class="s1">letters</span><span class="s2">.</span><span class="s1">ToArray</span><span class="s2">());</span>
+        <span class="s2">}</span>
+        
+        <span class="s0">private static string </span><span class="s1">GenerateStrangeWord</span><span class="s2">(</span><span class="s0">int </span><span class="s1">len</span><span class="s2">)</span>
+        <span class="s2">{</span>
+            <span class="s1">var abc </span><span class="s2">= </span><span class="s4">&quot;אבגדהוזחטיךכלםמןנסעףפץצקרשת&quot;</span><span class="s2">; </span><span class="s5">// see https://www.compart.com/en/unicode/block/U+0590</span>
+            <span class="s1">var letters </span><span class="s2">= </span><span class="s1">Enumerable</span><span class="s2">.</span><span class="s1">Repeat</span><span class="s2">(</span><span class="s3">0</span><span class="s2">, </span><span class="s1">len</span><span class="s2">).</span><span class="s1">Select</span><span class="s2">(</span><span class="s1">i =&gt; abc</span><span class="s2">[</span><span class="s1">random</span><span class="s2">.</span><span class="s1">Next</span><span class="s2">(</span><span class="s1">abc</span><span class="s2">.</span><span class="s1">Length</span><span class="s2">)]);</span>
+            <span class="s0">return new string</span><span class="s2">(</span><span class="s1">letters</span><span class="s2">.</span><span class="s1">ToArray</span><span class="s2">());</span>
+        <span class="s2">}</span>
+
+        <span class="s0">private static void </span><span class="s1">Check</span><span class="s2">(</span><span class="s0">string </span><span class="s1">password</span><span class="s2">, </span><span class="s0">int </span><span class="s1">expectedCount </span><span class="s2">= -</span><span class="s3">1</span><span class="s2">)</span>
+        <span class="s2">{</span>
+            <span class="s0">try</span>
+            <span class="s2">{</span>
+                <span class="s0">if </span><span class="s2">(</span><span class="s1">expectedCount </span><span class="s2">== -</span><span class="s3">1</span><span class="s2">)</span>
+                    <span class="s1">expectedCount </span><span class="s2">= </span><span class="s3">1 </span><span class="s2">&lt;&lt; </span><span class="s1">password</span><span class="s2">.</span><span class="s1">Count</span><span class="s2">(</span><span class="s1">c =&gt; c </span><span class="s2">&gt;= </span><span class="s4">'a' </span><span class="s2">&amp;&amp; </span><span class="s1">c </span><span class="s2">&lt;= </span><span class="s4">'z'</span><span class="s2">);</span>
+                <span class="s1">List</span><span class="s2">&lt;</span><span class="s0">string</span><span class="s2">&gt; </span><span class="s1">actual </span><span class="s2">= </span><span class="s1">CaseAlternatorTask</span><span class="s2">.</span><span class="s1">AlternateCharCases</span><span class="s2">(</span><span class="s1">password</span><span class="s2">);</span>
+                <span class="s1">var duplicateGroup </span><span class="s2">= </span><span class="s1">actual</span><span class="s2">.</span><span class="s1">GroupBy</span><span class="s2">(</span><span class="s1">a =&gt; a</span><span class="s2">).</span><span class="s1">FirstOrDefault</span><span class="s2">(</span><span class="s1">g =&gt; g</span><span class="s2">.</span><span class="s1">Count</span><span class="s2">() &gt; </span><span class="s3">1</span><span class="s2">);</span>
+                <span class="s0">if </span><span class="s2">(</span><span class="s1">duplicateGroup </span><span class="s2">!= </span><span class="s0">null</span><span class="s2">)</span>
+                    <span class="s0">throw new </span><span class="s1">AssertionException</span><span class="s2">(</span><span class="s4">&quot;word {0} repeated {1} times in result&quot;</span><span class="s2">, </span><span class="s1">duplicateGroup</span><span class="s2">.</span><span class="s1">Key</span><span class="s2">, </span><span class="s1">duplicateGroup</span><span class="s2">.</span><span class="s1">Count</span><span class="s2">());</span>
+                <span class="s0">for </span><span class="s2">(</span><span class="s0">int </span><span class="s1">i </span><span class="s2">= </span><span class="s3">0</span><span class="s2">; </span><span class="s1">i </span><span class="s2">&lt; </span><span class="s1">actual</span><span class="s2">.</span><span class="s1">Count</span><span class="s2">-</span><span class="s3">1</span><span class="s2">; </span><span class="s1">i</span><span class="s2">++)</span>
+                <span class="s2">{</span>
+                    <span class="s0">if </span><span class="s2">(</span><span class="s0">string</span><span class="s2">.</span><span class="s1">CompareOrdinal</span><span class="s2">(</span><span class="s1">actual</span><span class="s2">[</span><span class="s1">i</span><span class="s2">], </span><span class="s1">actual</span><span class="s2">[</span><span class="s1">i</span><span class="s2">+</span><span class="s3">1</span><span class="s2">]) &lt;= </span><span class="s3">0</span><span class="s2">)</span>
+                        <span class="s0">throw new </span><span class="s1">AssertionException</span><span class="s2">(</span><span class="s4">&quot;word {0} should be after {1} in result&quot;</span><span class="s2">, </span><span class="s1">actual</span><span class="s2">[</span><span class="s1">i</span><span class="s2">], </span><span class="s1">actual</span><span class="s2">[</span><span class="s1">i</span><span class="s2">+</span><span class="s3">1</span><span class="s2">]);</span>
+                <span class="s2">}</span>
+                <span class="s0">if </span><span class="s2">(</span><span class="s1">actual</span><span class="s2">.</span><span class="s1">Count </span><span class="s2">!= </span><span class="s1">expectedCount</span><span class="s2">)</span>
+                    <span class="s0">throw new </span><span class="s1">AssertionException</span><span class="s2">(</span><span class="s4">&quot;Expected {0} combinations, but found {1}&quot;</span><span class="s2">, </span><span class="s1">expectedCount</span><span class="s2">, </span><span class="s1">actual</span><span class="s2">.</span><span class="s1">Count</span><span class="s2">);</span>
+            <span class="s2">}</span>
+            <span class="s0">catch </span><span class="s2">(</span><span class="s1">AssertionException e</span><span class="s2">)</span>
+            <span class="s2">{</span>
+                <span class="s0">throw new </span><span class="s1">AssertionException</span><span class="s2">(</span><span class="s4">&quot;Error on: {0} \n{1}&quot;</span><span class="s2">, </span><span class="s1">password</span><span class="s2">.</span><span class="s1">FormatIfEmpty</span><span class="s2">(), </span><span class="s1">e</span><span class="s2">.</span><span class="s1">Message</span><span class="s2">);</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>
